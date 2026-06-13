@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+
+
+
+
+
+/* Layout: make footer stick to bottom when page is short */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* Push footer to the bottom when content is short */
+footer {
+	margin-top: auto;
+}
+
+/* Small accessibility/fallback for older browsers */
+@supports not (display: flex) {
+	footer {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	body { padding-bottom: 80px; }
+}
+
+/* Make portfolio cards equal height */
+.portfolio .bg-dark-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.portfolio .bg-dark-card .portfolio-card {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio .bg-dark-card .p-6 {
+  flex: 1 1 auto;
+}
+
