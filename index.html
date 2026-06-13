@@ -13,10 +13,11 @@
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
 
     <!-- Custom Tailwind Config -->
     <script>
@@ -143,6 +144,41 @@
         .progress-bar {
             animation: progressAnimation 2s ease-out forwards;
         }
+        /* Center single Case Studies card on desktop */
+        @media (min-width: 768px) {
+            .case-studies .sm\:grid > .bg-dark-card:only-child {
+                margin-left: auto;
+                margin-right: auto;
+                grid-column: 1 / -1;
+                max-width: 720px;
+            }
+        }
+
+        /* Portfolio: center single card, layout side-by-side and allow swipe */
+        @media (min-width: 640px) {
+            .portfolio .sm\:grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+                gap: 1.5rem;
+                justify-content: center;
+                align-items: start;
+            }
+            .portfolio .sm\:grid > .bg-dark-card {
+                width: 100%;
+                max-width: 360px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .portfolio .sm\:grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+                gap: 2rem;
+            }
+            .portfolio .sm\:grid > .bg-dark-card:only-child {
+                justify-self: center;
+                grid-column: auto;
+                max-width: 720px;
+            }
+        }
     </style>
 </head>
 <body class="bg-dark-bg text-gray-200 aurora-bg">
@@ -159,6 +195,7 @@
                     <li><a href="#about" class="hover:text-aurora-green transition">About</a></li>
                     <li><a href="#experience" class="hover:text-aurora-green transition">Experience</a></li>
                     <li><a href="#skills" class="hover:text-aurora-green transition">Skills</a></li>
+                    <li><a href="#Case-Studies" class="hover:text-aurora-green transition">Case Studies</a></li>
                   <!--  <li><a href="#services" class="hover:text-aurora-green transition">Services</a></li>-->
                     <li><a href="#portfolio" class="hover:text-aurora-green transition">Portfolio</a></li>
                     <li><a href="#testimonials" class="hover:text-aurora-green transition">Testimonials</a></li>
@@ -239,11 +276,10 @@
         </div>
     </section>
 
-     <!-- About Section -->
+    <!-- About Section -->
     <section id="about" class="py-20 relative" style="padding-bottom: 2%;">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
-    </section>
 
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start"> 
         <!-- Left Column -->
@@ -277,7 +313,7 @@
         <!-- Right Column -->
         <div class="space-y-8">
         <!-- Profile Photo -->
-    <div class="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-aurora-green via-aurora-blue to-aurora-purple p-1">
+    <div class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 mx-auto rounded-full bg-gradient-to-br from-aurora-green via-aurora-blue to-aurora-purple p-1">
         <div class="w-full h-full rounded-full bg-dark-bg overflow-hidden">
             <img
                 src="Profile.png"
@@ -377,12 +413,13 @@
     <section id="skills" class="py-20">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Technical Skills</h2>
-            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="max-w-4xl mx-auto space-y-8">
                     <!-- Frontend Skills -->
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div class="max-w-6xl mx-auto overflow-x-auto px-4 sm:px-0">
+                    <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3">
 
                     <!-- Shopify Development -->
-                    <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+                    <div class="bg-dark-card p-4 rounded-lg border border-dark-border min-w-[90%] snap-center sm:min-w-0">
                         <h3 class="text-xl font-semibold mb-4 text-aurora-green">Shopify Development</h3>
                         <div class="space-y-4">
                             <div>
@@ -434,7 +471,7 @@
                     </div>
 
                     <!-- Shopify Administration -->
-                    <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+                    <div class="bg-dark-card p-4 rounded-lg border border-dark-border min-w-[90%] snap-center sm:min-w-0">
                         <h3 class="text-xl font-semibold mb-4 text-aurora-blue">Shopify Administration</h3>
                         <div class="space-y-4">
                             <div>
@@ -486,7 +523,7 @@
                     </div>
 
                     <!-- Shopify Store Operations -->
-                    <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
+                    <div class="bg-dark-card p-4 rounded-lg border border-dark-border min-w-[90%] snap-center sm:min-w-0">
                         <h3 class="text-xl font-semibold mb-4 text-aurora-blue">Shopify Store Operations</h3>
                         <div class="space-y-4">
                             <div>
@@ -536,12 +573,13 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
 
                 <!-- Tools & Others -->
                 <div>
                     <h3 class="text-xl font-semibold mb-4 text-aurora-purple">Tools & DevOps</h3>
-                    <div class="grid grid-cols-4 md:grid-cols-4 gap-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
                             <img
                                 src="Shopify CLI.png" style="width: 48px; height: 48px; object-fit: contain; margin: 0 auto 8px;"
@@ -620,14 +658,15 @@
         </div>
     </section>
 
-    <section id="skills" class="py-20">
+    <section id="Case-Studies" class="py-20 case-studies">
         <div class="container mx-auto px-6"> 
             <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Case Studies</h2>
                 <div class="max-w-4xl mx-auto space-y-8">
                             <!-- Frontend Skills -->
-                    <div class="max-w-6xl mx-auto grid gap-8"style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                    <div class="max-w-6xl mx-auto overflow-x-auto px-4 -mx-4 sm:mx-0 sm:px-0">
+                        <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-2">
                                     <!-- Shopify Development -->
-                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border"> 
+                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border min-w-[85%] snap-center sm:min-w-0"> 
                             <h3 class="text-xl font-semibold mb-4 text-aurora-green">Optimized listing—conversion-focused and keyword-rich content for product discoverability (SEO)</h3>
                                 <div class="space-y-4" style="position: relative; padding-bottom: 53.73134328358209%; height: 0;">
                                     <iframe src="https://www.loom.com/embed/023d213d580d4974afcb1dce416fd425" frameborder="0" webkitallowfullscreen mozallowfullscreen 
@@ -729,11 +768,12 @@
     </section> -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20">
+    <section id="portfolio" class="py-20 portfolio">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Portfolio</h2>
-            <div class="max-w-6xl mx-auto grid gap-8 justify-center"style="grid-template-columns: repeat(auto-fit, minmax(350px, 350px));">
-                <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div class="max-w-6xl mx-auto overflow-x-auto px-4 sm:px-0">
+                <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-dark-card rounded-lg overflow-hidden card-hover group min-w-[90%] snap-center sm:min-w-0">
                     <div class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
                         <i class="fas fa-shopping-cart text-6xl text-dark-bg"></i>
                     </div>
@@ -758,10 +798,8 @@
                         </div>
                     </div>
                 </div>
-                
-                
 
-                <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+                <div class="bg-dark-card rounded-lg overflow-hidden card-hover group min-w-[90%] snap-center sm:min-w-0">
                     <div class="h-48 bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
                         <i class="fas fa-shopping-cart text-6xl text-dark-bg"></i>
                     </div>
@@ -837,7 +875,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-dark-card/30">
       <!-- <div class="max-w-6xl mx-auto grid gap-8 justify-center"style="grid-template-columns: repeat(auto-fit, minmax(350px, 350px));"> -->
-        <div class="container mx-auto px-6">
+                <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Client Testimonials</h2>
             <div class="max-w-4xl mx-auto grid md:grid-cols-1 gap-8">
                 <div class="bg-dark-card p-6 rounded-lg">
@@ -968,7 +1006,7 @@
                             </div>
                             <div>
                                 <p class="text-gray-400">Phone</p>
-                                <p></p>+63 946 327 7567</p>
+                                <p>+63 946 327 7567</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
