@@ -1,0 +1,72 @@
+
+
+/* Layout: make footer stick to bottom when page is short */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* Push footer to the bottom when content is short */
+footer {
+	margin-top: auto;
+}
+
+/* Small accessibility/fallback for older browsers */
+@supports not (display: flex) {
+	footer {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	body { padding-bottom: 80px; }
+}
+
+/* Make portfolio cards equal height */
+.portfolio .bg-dark-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.portfolio .bg-dark-card .portfolio-card {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio .bg-dark-card .p-6 {
+  flex: 1 1 auto;
+}
+
+/* Before/After comparison slider */
+.ba-slider {
+	position: relative;
+	user-select: none;
+	touch-action: none;
+	background: transparent;
+}
+.ba-slider img { display: block; width: 100%; height: auto; }
+.ba-slider .resize { position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden; }
+.ba-slider .handle { cursor: ew-resize; }
+.ba-slider .handle-line { pointer-events: none; }
+.ba-slider .handle-dot { position: absolute; width: 36px; height: 36px; border-radius: 9999px; background: linear-gradient(135deg, #00ffaa, #00aaff); box-shadow: 0 4px 12px rgba(0,0,0,0.4); left: 50%; top: 50%; transform: translate(-50%,-50%); border: 3px solid rgba(10,14,26,0.85); }
+
+@media (max-width: 640px) {
+	.ba-slider .resize img, .ba-slider img { height: 260px; object-fit: cover; }
+}
+
+@media (min-width: 641px) {
+	.ba-slider .resize img, .ba-slider img { height: 320px; object-fit: cover; }
+}
+
+/* Small accessibility helper */
+.ba-slider:focus { outline: none; }
+

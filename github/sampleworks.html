@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>PGGP — Theme Migration Case Study | Dale Virgel Perang</title>
+        <meta name="description" content="Case study: Theme migration and Shopify optimization for ProGuard Gutter Protection (PGGP) by Dale Virgel Perang. Theme migration, UX improvements, and lead capture.">
+        <meta name="keywords" content="PGGP, Shopify migration, Shopify case study, theme migration, eCommerce optimization, Dale Virgel Perang">
+        <meta name="robots" content="index,follow">
+        <meta property="og:title" content="PGGP — Theme Migration Case Study">
+        <meta property="og:description" content="Theme migration and Shopify optimization case study by Dale Virgel Perang.">
+        <meta property="og:url" content="sampleworks.html">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@virgelperang">
+        <meta name="twitter:creator" content="@virgelperang">
+
+        <!-- Tailwind CSS via CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="canonical" href="sampleworks.html">
+
+
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+        <!-- Custom Tailwind Config -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'aurora-green': '#00ffaa',
+                            'aurora-blue': '#00aaff',
+                            'aurora-purple': '#aa00ff',
+                            'aurora-pink': '#ff00aa',
+                            'dark-bg': '#0a0e1a',
+                            'dark-card': '#1a1f2e',
+                            'dark-border': '#2a2f3e'
+                        },
+                        animation: {
+                            'aurora': 'aurora 15s ease-in-out infinite',
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 4s ease-in-out infinite',
+                            'slide-up': 'slideUp 0.5s ease-out',
+                            'glow': 'glow 2s ease-in-out infinite'
+                        },
+                        keyframes: {
+                            aurora: {
+                                '0%, 100%': {
+                                    backgroundPosition: '0% 50%',
+                                    backgroundSize: '200% 200%'
+                                },
+                                '50%': {
+                                    backgroundPosition: '100% 50%',
+                                    backgroundSize: '200% 200%'
+                                }
+                            },
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0px)' },
+                                '50%': { transform: 'translateY(-20px)' }
+                            },
+                            slideUp: {
+                                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                                '100%': { transform: 'translateY(0)', opacity: '1' }
+                            },
+                            glow: {
+                                '0%, 100%': {
+                                    boxShadow: '0 0 5px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3)'
+                                },
+                                '50%': {
+                                    boxShadow: '0 0 20px rgba(0, 170, 255, 0.8), 0 0 40px rgba(0, 170, 255, 0.4)'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+
+                <!-- Structured data for the case study page -->
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": "PGGP — Theme Migration Case Study",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Dale Virgel Perang"
+                    },
+                    "description": "Theme migration and Shopify optimization for ProGuard Gutter Protection (PGGP)."
+                }
+                </script>
+
+        <style>
+            /* Aurora gradient background */
+            .aurora-bg {
+                background: linear-gradient(-45deg, #0a0e1a, #1a0033, #002244, #001a33);
+                background-size: 400% 400%;
+                animation: aurora 15s ease infinite;
+            }
+
+            /* Aurora light effect overlay */
+            .aurora-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100vh;
+                background:
+                    radial-gradient(ellipse at top left, rgba(0, 255, 170, 0.15) 0%, transparent 40%),
+                    radial-gradient(ellipse at top right, rgba(0, 170, 255, 0.15) 0%, transparent 40%),
+                    radial-gradient(ellipse at bottom left, rgba(170, 0, 255, 0.1) 0%, transparent 40%),
+                    radial-gradient(ellipse at bottom right, rgba(255, 0, 170, 0.1) 0%, transparent 40%);
+                pointer-events: none;
+                opacity: 0.7;
+            }
+
+            /* Smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* Custom scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #0a0e1a;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(to bottom, #00ffaa, #00aaff);
+                border-radius: 5px;
+            }
+
+            /* Gradient text */
+            .gradient-text {
+                background: linear-gradient(135deg, #00ffaa 0%, #00aaff 50%, #aa00ff 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            /* Card hover effect */
+            .card-hover {
+                transition: all 0.3s ease;
+                border: 1px solid transparent;
+            }
+
+            .card-hover:hover {
+                border-color: #00ffaa;
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 255, 170, 0.2);
+            }
+
+            /* Progress bar animation */
+            @keyframes progressAnimation {
+                0% { width: 0%; }
+            }
+
+            .progress-bar {
+                animation: progressAnimation 2s ease-out forwards;
+            }
+            /* Center single Case Studies card on desktop */
+            @media (min-width: 768px) {
+                .case-studies .sm\:grid > .bg-dark-card:only-child {
+                    margin-left: auto;
+                    margin-right: auto;
+                    grid-column: 1 / -1;
+                    max-width: 720px;
+                }
+            }
+
+            /* Portfolio: center single card, layout side-by-side and allow swipe */
+            @media (min-width: 640px) {
+                .portfolio .sm\:grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+                    gap: 1.5rem;
+                    justify-content: center;
+                    align-items: start;
+                }
+                .portfolio .sm\:grid > .bg-dark-card {
+                    width: 100%;
+                    max-width: 360px;
+                }
+            }
+            @media (min-width: 1024px) {
+                .portfolio .sm\:grid {
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+                    gap: 2rem;
+                }
+                .portfolio .sm\:grid > .bg-dark-card:only-child {
+                    justify-self: center;
+                    grid-column: auto;
+                    max-width: 720px;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-dark-bg text-gray-200 aurora-bg">
+        <!-- Aurora overlay effect -->
+        <div class="aurora-overlay"></div>
+
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md border-b border-dark-border z-50">
+            <div class="container mx-auto px-6 py-3">
+                <div class="flex justify-between items-center">
+                    <div class="text-2xl font-bold gradient-text">Portfolio - Dale Virgel Perang</div>
+                    <ul class="hidden md:flex space-x-8">
+                        <li><a href="index.html" class="hover:text-aurora-green transition">Home</a></li>
+                        <li><a href="index.html#about" class="hover:text-aurora-green transition">About</a></li>
+                        <li><a href="index.html#experience" class="hover:text-aurora-green transition">Experience</a></li>
+                        <li><a href="index.html#skills" class="hover:text-aurora-green transition">Skills</a></li>
+                        <li><a href="index.html#Case-Studies" class="hover:text-aurora-green transition">Case Studies</a></li>
+                    <!--  <li><a href="index.html#services" class="hover:text-aurora-green transition">Services</a></li>-->
+                        <li><a href="index.html#portfolio" class="hover:text-aurora-green transition">Portfolio</a></li>
+                        <li><a href="index.html#testimonials" class="hover:text-aurora-green transition">Testimonials</a></li>
+                    <!--  <li><a href="index.html#blog" class="hover:text-aurora-green transition">Blog</a></li> -->
+                        <li><a href="index.html#contact" class="hover:text-aurora-green transition">Contact</a></li>
+                    </ul>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                <!-- Mobile menu -->
+                <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+                    <a href="index.html#home" class="block py-2 hover:text-aurora-green">Home</a>
+                    <a href="index.html#about" class="block py-2 hover:text-aurora-green">About</a>
+                    <a href="index.html#experience" class="block py-2 hover:text-aurora-green">Experience</a>
+                    <a href="index.html#skills" class="block py-2 hover:text-aurora-green">Skills</a>
+                    <a href="index.html#services" class="block py-2 hover:text-aurora-green">Services</a>
+                    <a href="index.html#portfolio" class="block py-2 hover:text-aurora-green">Portfolio</a>
+                    <a href="index.html#testimonials" class="block py-2 hover:text-aurora-green">Testimonials</a>
+                    <a href="index.html#blog" class="block py-2 hover:text-aurora-green">Blog</a>
+                    <a href="index.html#contact" class="block py-2 hover:text-aurora-green">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+    <section class="py-20 relative" style="padding-bottom: 2%;">
+            <div class="container mx-auto px-6">
+                    <h2 class="text-5xl font-bold text-center mb-12 gradient-text">PGGP - Theme Migration</h2>
+                    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-5 items-start"> 
+                        <!-- Left Column -->
+                        <div class="space-y-3">
+                            <strong>Project Overview</strong> <br>
+                            <p class="text-gray-400 leading-relaxed">
+                                ProGuard Gutter Protection (PGGP) is a leading provider of high-quality gutter protection solutions. 
+                                The company offers a range of products designed to keep gutters clean and free from debris, ensuring 
+                                optimal performance and protection for homes and businesses. With a commitment to innovation and customer satisfaction, 
+                                PGGP has established itself as a trusted name in the industry.
+                            </p> <br>
+                            <strong>Objective</strong>                            
+                            <p class="text-gray-400 leading-relaxed">
+                                        • Migrate the store from the old theme to a modern Shopify theme. <br>
+                                        • Improve user experience and visual consistency. <br>
+                                        • Maintain existing functionality during transition. <br>
+
+                                    </p> <br>
+                                    <strong>Key Tasks</strong> <br>
+                                    <p class="text-gray-400 leading-relaxed">
+                                        • Theme migration and configuration. <br>
+                                        • Homepage redesign and layout improvements. <br>
+                                        • Navigation and menu restructuring. <br>
+                                        • Mobile responsiveness optimization. <br>
+                                        • Form and lead-generation integration. <br>
+                                        • Testing and quality assurance. <br>
+
+                                    </p> <br>
+                                    <strong>Tools Used</strong> <br>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Shopify CLI</span>
+                                    <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">Shopify Admin</span>
+                                    <span class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs">Liquid</span>
+                                    <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">Canva</span>
+                                </div>
+                                        
+
+                                <!--       <p class="text-gray-400 leading-relaxed">
+                                        What sets me apart is my ability to combine analytical thinking with creativity. 
+                                        I enjoy understanding systems, identifying opportunities for improvement, and developing 
+                                        solutions that are efficient, scalable, and user-focused. I value continuous learning and 
+                                        adapting to new challenges to deliver meaningful results.
+                                    </p> -->
+                        </div>    
+
+                    <!-- Right Column -->
+                <div class="hidden md:block space-y-3">
+                    <div class="bg-gradient-to-br rounded-lg from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                        <div class="w-full h-full bg-dark-bg rounded-lg overflow-hidden">
+                            <img
+                                src="img/Untitled design.png"
+                                alt="PGGP New Theme"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="hidden md:block space-y-8">
+                                <a href="https://proguardgutterprotection.myshopify.com" target="_blank" rel="noopener noreferrer">
+                                    <div class="bg-gradient-to-br rounded-lg from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                                        <div class="w-full h-full bg-dark-bg rounded-lg overflow-hidden">
+                                            <img
+                                                src="img/Screenshot 2026-06-13 180036.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full h-full object-cover"
+                                            >
+                                        </div>
+                                </div>
+                                    <p class="text-center text-white py-2">Click to preview the new theme | <mark><strong>Password:laygle</strong></mark></p>
+                                </a>
+                            </div>
+                    </div>      
+                </div>                    
+            </div> 
+    </section>
+
+    <section>
+        <div class="comparison-container max-w-6xl mx-auto overflow-x-auto px-4 sm:px-0">
+            <h2 class="text-5xl font-bold text-center mb-12 gradient-text hidden md:block">Scroll Comparison</h2>
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6">
+                <div class="min-w-[90%] snap-center">
+                    <h2 class="text-4xl font-bold text-center gradient-text from-aurora-green via-aurora-blue to-aurora-purple hidden md:block">Before</h2>
+                    <div class="scroll">
+                        <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-1 card-hover group min-w-[90%] snap-center sm:min-w-0 flex-col h-full">
+                            <div class="hidden md:block space-y-8">
+                                <div class="bg-gradient-to-br rounded-lg from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                                    <div class="w-full h-[500px] overflow-y-auto bg-dark-bg rounded-lg overflow-hidden">
+                                        <img
+                                            src="scroll/Old PGGP 1.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 2.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 3.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 4.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 5.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 6.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 7.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 8.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 9.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="scroll/Old PGGP 10.png"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll min-w-[90%] snap-center">
+                    <h2 class="text-4xl font-bold text-center gradient-text hidden md:block">After</h2>
+                    <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-1 card-hover group min-w-[90%] snap-center sm:min-w-0 flex-col h-full">
+                        <div class="hidden md:block space-y-8">
+                            <div class="bg-gradient-to-br rounded-lg from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                                <div class="w-full h-[500px] overflow-y-auto bg-dark-bg rounded-lg overflow-hidden">
+                                    <img
+                                        src="Scroll/New PGGP 1.png"
+                                        alt="PGGP New Theme"
+                                        class="w-full object-contain"
+                                    >
+                                    <img
+                                        src="Scroll/New PGGP 2.png"
+                                        alt="PGGP New Theme"
+                                        class="w-full object-contain"
+                                    >
+                                    <img
+                                        src="Scroll/New PGGP 3.png"
+                                        alt="PGGP New Theme"
+                                        class="w-full object-contain"
+                                    >
+                                    <img
+                                        src="Scroll/New PGGP 4.png"
+                                        alt="PGGP New Theme"
+                                        class="w-full object-contain"
+                                    >
+                                    <img
+                                        src="Scroll/New PGGP 5.png"
+                                        alt="PGGP New Theme"
+                                        class="w-full object-contain"
+                                    >
+                                    <img
+                                        src="Scroll/New PGGP 6.png"
+                                        alt="PGGP New Theme"
+                                        class="w-full object-contain"
+                                    >
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll flex flex-col items-center">
+                    <h2 class="text-4xl font-bold text-center gradient-text">Mobile view</h2>
+                    <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-1 card-hover group min-w-[90p%] snap-center sm:min-w-0 flex-col h-full w-[300px]">
+                    <div class="md:block hidden space-y-8">
+                    <div class="scroll">
+                    
+                                <div class="bg-gradient-to-br rounded-lg from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                                    <div class="w-full h-[500px] overflow-y-auto bg-dark-bg rounded-lg overflow-hidden">
+                                        <img
+                                            src="mobile/mobile 1.jpg"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="mobile/mobile 2.jpg"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="mobile/mobile 3.jpg"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="mobile/mobile 4.jpg"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="mobile/mobile 5.jpg"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="mobile/mobile 6.jpg"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        <img
+                                            src="mobile/mobile 7.jpg"
+                                            alt="PGGP New Theme"
+                                            class="w-full object-contain"
+                                        >
+                                        
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 relative block md:hidden" style="padding-bottom: 2%;">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-12 gradient-text">Comparison</h2>
+            <div class="max-w-12xl mx-auto overflow-x-auto px-4 sm:px-0">
+                    <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3">                        
+                        <div class="space-y-5 min-w-full snap-center sm:min-w-0">
+                            <h2 class="text-4xl font-bold text-center gradient-text">Before</h2>
+                            <!-- Left Column -->
+                            <div class="scroll">
+                                <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-1 card-hover group min-w-[90%] snap-center sm:min-w-0 flex-col h-full">
+                                    <div class="space-y-8">
+                                        <div class="bg-gradient-to-br rounded-lg from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                                            <div class="w-full h-[300px] overflow-y-auto bg-dark-bg rounded-lg overflow-hidden">
+                                                <img
+                                                    src="scroll/Old PGGP 1.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 2.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 3.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 4.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 5.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 6.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 7.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 8.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 9.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                                <img
+                                                    src="scroll/Old PGGP 10.png"
+                                                    alt="PGGP New Theme"
+                                                    class="w-full object-contain"
+                                                >
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-5 min-w-full snap-center sm:min-w-0">
+                        <h2 class="text-4xl font-bold text-center gradient-text">After</h2>
+                        <!-- Right Column -->
+                        <div class="scroll">
+                            <h2 class="text-4xl font-bold text-center gradient-text hidden md:block">After</h2>
+                            <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-1 card-hover group min-w-[90%] snap-center sm:min-w-0 flex-col h-full">
+                                <div class="space-y-8">
+                                    <div class="bg-gradient-to-br rounded-lg from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                                        <div class="w-full h-[300px] overflow-y-auto bg-dark-bg rounded-lg overflow-hidden">
+                                            <img
+                                                src="Scroll/New PGGP 1.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="Scroll/New PGGP 2.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="Scroll/New PGGP 3.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="Scroll/New PGGP 4.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="Scroll/New PGGP 5.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="Scroll/New PGGP 6.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="Scroll/New PGGP 6.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="Scroll/New PGGP 6.png"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-5 min-w-full snap-center sm:min-w-0">
+                        <h2 class="text-4xl font-bold text-center gradient-text">Mobile view</h2>
+                        <div class="scroll">
+                            <h2 class="text-4xl font-bold text-center gradient-text hidden md:block">After</h2>
+                            <div class="flex gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-1 card-hover group min-w-[90%] snap-center sm:min-w-0 flex-col h-full">
+                                <div class="space-y-8">
+                                    <div class="bg-gradient-to-br rounded-lg from-aurora-green via-aurora-blue to-aurora-purple p-1">
+                                        <div class="w-full h-[300px] overflow-y-auto bg-dark-bg rounded-lg overflow-hidden">
+                                            <img
+                                                src="mobile/mobile 1.jpg"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="mobile/mobile 2.jpg"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="mobile/mobile 3.jpg"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="mobile/mobile 4.jpg"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="mobile/mobile 5.jpg"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="mobile/mobile 6.jpg"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="mobile/mobile 7.jpg"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                            <img
+                                                src="mobile/mobile 8.jpg"
+                                                alt="PGGP New Theme"
+                                                class="w-full object-contain"
+                                            >
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20 bg-dark-card/30">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
+                    <div class="max-w-4xl mx-auto">
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
+                                        <i class="fas fa-envelope text-dark-bg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-400">Email</p>
+                                        <p>virgilloperang@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
+                                        <i class="fas fa-phone text-dark-bg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-400">Phone</p>
+                                        <p>+63 946 327 7567</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-dark-bg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-400">Location</p>
+                                        <p>Philippines</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form action="https://formspree.io/f/xjgdangn" method="POST" class="space-y-4">
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    required
+                                    class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Your Email"
+                                    required
+                                    class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green">
+                                <textarea
+                                    name="message"
+                                    placeholder="Your Message"
+                                    rows="4"
+                                    required
+                                    class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg focus:outline-none focus:border-aurora-green"></textarea>
+                                <button
+                                    type="submit"
+                                    class="w-full px-8 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-lg text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/50 transition transform hover:scale-105">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+
+            <footer class="py-8 border-t border-dark-border">
+                <div class="container mx-auto px-6 text-center">
+                    <div class="mb-4">
+                    <!--   <a href="#" class="text-2xl mx-2 hover:text-aurora-green transition"><i class="fab fa-github"></i></a> -->
+                        <a href="https://www.linkedin.com/in/virgelio-perang-4773a02b7" class="text-2xl mx-2 hover:text-aurora-blue transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://upwork.com/freelancers/~017c41169227ad4539" target="_blank" rel="noopener noreferrer" class="text-2xl hover:text-aurora-purple transition"><i class="fa-brands fa-square-upwork"></i></a>
+                    <!--   <a href="#" class="text-2xl mx-2 hover:text-aurora-purple transition"><i class="fab fa-twitter"></i></a> -->
+                    <!--   <a href="#" class="text-2xl mx-2 hover:text-aurora-pink transition"><i class="fab fa-instagram"></i></a> -->
+                    </div>
+                    <p class="text-gray-400">© 2026 Dale Virgel Perang.</p>
+                </div>
+            </footer>
+    </body>
+</html>
